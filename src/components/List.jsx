@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import teste from '../services/api/teste.json'
+import '../styles/bootstrap.min.css'
+import '../styles/style.css'
 import ItemCard from './shared/ItemCard';
 import Api from '../services/Api'
 import axios from 'axios';
 // import Api from '../services/Api';
-function List() {
+function List({listItems, handleAddProduct}) {
     /*
     useEffect(()=>{
         Api.get('/fruit/all')
@@ -16,12 +17,14 @@ function List() {
     }, [])
     */
   return (
-    <div>
-        {teste.map((item, key)=>{
+    <div className="container">
+    <div className="row d-flex justify-content-around">
+        {listItems.map((item, key)=>{
             return(
-                <ItemCard name={item.name} key={key}/>
+                <ItemCard listItems={item} key={key} handleAddProduct={handleAddProduct}/>
             );
         })}
+    </div>
     </div>
   );
 }
