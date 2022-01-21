@@ -9,11 +9,10 @@ function App() {
     const [cartItems, setCartItems] = useState([])
     const handleAddProduct = (product)=>{
      const productExists = cartItems.find((product)=> product.id === teste.id)
-     if(productExists){
+     productExists?
        setCartItems(cartItems.map((product)=>product.id === teste.id ? {...productExists, quantity: productExists.quantity + 1}: product))
-     }else{
+     :
        setCartItems(...cartItems, {...teste, quantity: 1})
-     }
     }
     return(
       <Fragment>

@@ -4,7 +4,7 @@ function AddCartButton({listItems, handleAddProduct}) {
 
   return(
   <div>
-    <a href="#" className="btn btn-success" onClick={handleAddProduct(listItems)}>Add to cart</a>
+    <a href="#" className="btn btn-success" onClick={()=>handleAddProduct(listItems)}>Add to cart</a>
   </div>
   );
 }
